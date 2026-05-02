@@ -1,0 +1,25 @@
+CREATE TABLE admins (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50),
+password VARCHAR(255)
+);
+
+INSERT INTO admins(username,password)
+VALUES ('admin','12345');
+
+CREATE TABLE customers (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+phone VARCHAR(30),
+package VARCHAR(50),
+bill DECIMAL(10,2),
+status VARCHAR(20)
+);
+
+CREATE TABLE invoices (
+id INT AUTO_INCREMENT PRIMARY KEY,
+customer_id INT,
+amount DECIMAL(10,2),
+status VARCHAR(20),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

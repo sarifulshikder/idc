@@ -1,0 +1,16 @@
+CREATE TABLE customers (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ name VARCHAR(100),
+ phone VARCHAR(20),
+ package VARCHAR(50),
+ due DECIMAL(10,2),
+ status VARCHAR(20)
+);
+
+CREATE TABLE invoices (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+ customer_id INT,
+ amount DECIMAL(10,2),
+ status VARCHAR(20),
+ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
